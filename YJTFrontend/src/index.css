@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.growing-plants {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.plant {
+  position: absolute;
+  bottom: -20px;
+  background: linear-gradient(to top, #059669, #34d399);
+  width: 3px;
+  transform-origin: bottom;
+  animation: grow 3s ease-out infinite;
+  opacity: 0.3;
+}
+
+.plant::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #34d399;
+}
+
+@keyframes grow {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    height: 100px;
+    opacity: 0;
+  }
+}
