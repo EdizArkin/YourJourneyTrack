@@ -1,0 +1,6 @@
+@YJTBackend_HostAddress = http://localhost:5156
+
+GET {{YJTBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
